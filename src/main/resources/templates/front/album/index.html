@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Album</title>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet" />
+
+    <link href="../../../static/apps/css/style.css" th:href="@{/apps/css/style.css}" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">사진첩</h3>
+    </div>
+
+    <div class="jumbotron">
+        <h1>Jumbotron heading</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    </div>
+
+    <div class="row marketing">
+        <ul class="imagebox">
+            <li>
+                <a href="../../../static/apps/image/spring.jpg" th:href="@{/apps/image/spring.jpg}" data-imagelightbox="gallery" >
+                    <img th:src="@{/apps/image/spring.jpg}" src="../../../static/apps/image/spring.jpg"/>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <footer class="footer">
+        <p class="text-center">2015.05.12</p>
+    </footer>
+
+</div>
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+        th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+<script src="../../../static/apps/js/util.js"
+        th:src="@{/apps/js/util.js}"></script>
+
+<script src="../../../static/apps/js/imagelightbox.js"
+        th:src="@{/apps/js/imagelightbox.js}"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script  src="../../../static/apps/js/ie10-viewport-bug-workaround.js" th:src="@{/apps/js/ie10-viewport-bug-workaround.js}"></script>
+
+<script type="text/javascript">
+<!--
+$(function() {
+
+    $("a[data-imagelightbox='gallery']").imageLightbox({
+        onStart: 	 function() { overlayOn(); },
+        onEnd:	 	 function() { overlayOff(); activityIndicatorOff(); },
+        onLoadStart: function() { activityIndicatorOn(); },
+        onLoadEnd:	 function() { activityIndicatorOff(); }
+    });
+});
+//-->
+</script>
+</body>
+</html>

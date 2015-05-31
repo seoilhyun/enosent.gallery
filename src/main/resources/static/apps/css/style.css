@@ -1,0 +1,236 @@
+/* Space out content a bit */
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+/*
+#container
+{
+    width: 660px;
+    text-align: center;
+    // padding: 10 0 0 20;
+    // margin: 10px auto 20px;
+}
+#container ul
+{
+    padding: 10 0 0 10;
+}
+#container li
+{
+    display: inline-block;
+    margin: 10px;
+}
+*/
+.imagebox li
+{
+    display: inline-block;
+    margin: 10px;
+}
+.imagebox img
+{
+    width: 120px; /* 140 */
+    height: 100px; /* 140 */
+    border-color: #eee;
+    border: 10px solid rgba( 255, 255, 255, .5 ); /* 10 */
+
+    -webkit-box-shadow: 0 0 5px rgba( 0, 0, 0, .05 ); /* 5 */
+    box-shadow: 0 0 5px rgba( 0, 0, 0, .05 ); /* 5 */
+
+    -webkit-transition: -webkit-box-shadow .3s ease, border-color .3s ease;
+    transition: box-shadow .3s ease, border-color .3s ease;
+}
+.imagebox img:hover,
+.imagebox img:focus
+{
+    border-color: #fff;
+
+    -webkit-box-shadow: 0 0 0.938em rgba( 0, 0, 0, .25 ); /* 15 */
+    box-shadow: 0 0 0.938em rgba( 0, 0, 0, .25 ); /* 15 */
+}
+
+/*
+footer
+{
+    font-size: 12pt;
+    color: #aaa;
+    border-top: 1px solid #ddd;
+    padding-top: 14px;
+    margin-top: 14px;
+}
+*/
+
+#imagelightbox
+{
+    cursor: pointer;
+    position: fixed;
+    z-index: 9999;
+
+    -ms-touch-action: none;
+    touch-action: none;
+
+}
+
+/* ACTIVITY INDICATION */
+#imagelightbox-loading,
+#imagelightbox-loading div
+{
+    border-radius: 50%;
+}
+#imagelightbox-loading
+{
+    width: 20px;
+    height: 20px;
+    background-color: #444;
+    background-color: rgba( 0, 0, 0, .5 );
+    position: fixed;
+    z-index: 10003;
+    top: 50%;
+    left: 50%;
+    padding: 5px; /* 10 */
+    margin: 10px;
+
+    -webkit-box-shadow: 0 0 2.5em rgba( 0, 0, 0, .75 ); /* 40 */
+    box-shadow: 0 0 2.5em rgba( 0, 0, 0, .75 ); /* 40 */
+
+    -webkit-animation: imagelightbox-loading .5s ease infinite;
+    animation: imagelightbox-loading .5s ease infinite
+}
+
+#imagelightbox-loading div
+{
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+
+    -webkit-animation: imagelightbox-loading .5s ease infinite;
+    animation: imagelightbox-loading .5s ease infinite;
+}
+
+/* OVERLAY */
+
+#imagelightbox-overlay
+{
+    background-color: #fff;
+    background-color: rgba( 255, 255, 255, .9 );
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@-webkit-keyframes imagelightbox-loading
+{
+    from { opacity: .5;	-webkit-transform: scale( .75 ); }
+    50%	 { opacity: 1;	-webkit-transform: scale( 1 ); }
+    to	 { opacity: .5;	-webkit-transform: scale( .75 ); }
+}
+@keyframes imagelightbox-loading
+{
+    from { opacity: .5;	transform: scale( .75 ); }
+    50%	 { opacity: 1;	transform: scale( 1 ); }
+    to	 { opacity: .5;	transform: scale( .75 ); }
+}
+
+#imagelightbox-loading,
+#imagelightbox-overlay
+{
+    -webkit-animation: fade-in .25s linear;
+    animation: fade-in .25s linear;
+}
+@-webkit-keyframes fade-in
+{
+    from	{ opacity: 0; }
+    to		{ opacity: 1; }
+}
+@keyframes fade-in
+{
+    from	{ opacity: 0; }
+    to		{ opacity: 1; }
+}
+
+/*
+@media only screen and (max-width: 660px)
+{
+    #container
+    {
+        width: 100%;
+    }
+}
+*/

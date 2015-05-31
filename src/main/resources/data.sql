@@ -1,0 +1,1 @@
+INSERT INTO user (username, password) VALUES ('g_admin', '1234')

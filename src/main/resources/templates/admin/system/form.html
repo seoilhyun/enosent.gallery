@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Album</title>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet" />
+
+    <link href="../../../static/apps/css/admin/clean-blog.min.css"
+          th:href="@{/apps/css/admin/clean-blog.min.css}" rel="stylesheet" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link href="../../../static/apps/css/admin/admin.css"
+          th:href="@{/apps/css/admin/admin.css}" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<h1>HTTP method :: POST ::</h1>
+<form name="reg" id="reg" th:action="@{/admin/system/save}" method="post">
+
+    <input type="text" name="name" value=""  />
+    <input type="text" name="email" value=""  />
+    <input type="button" id="btn_reg" name="btn_reg" value="post test."/>
+</form>
+
+<hr/>
+
+<h1>Hidden HTTP method :: PUT ::</h1>
+<form name="mod" id="mod" th:action="@{/admin/system/update}" method="post">
+    <input type="hidden" name="_method" value="put" />
+
+    <input type="text" name="name" value=""  />
+    <input type="text" name="email" value=""  />
+    <input type="button" id="btn_mod" name="btn_mod" value="put test."/>
+</form>
+
+<!-- jQuery -->
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+        th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/js/bootstrap.min.js"
+        th:src="@{/webjars/bootstrap/3.3.4/js/bootstrap.min.js}"></script>
+
+
+<!-- Custom Theme JavaScript -->
+<script src="../../../static/apps/js/admin/clean-blog.js"
+        th:src="@{/apps/js/admin/clean-blog.js}"></script>
+
+<script type="text/javascript" th:inline="javascript">
+//*<![CDATA[*/
+$(function() {
+
+    $("#btn_reg").on("click", function(){
+        //$("#reg").submit();
+
+        $.ajax({
+            url: $("#reg").attr("action"),
+            type: 'post',
+            data: {
+                name: "post name",
+                email: "post email"
+            },
+            cache: false,
+            success: function() {},
+            error: function() {}
+        })
+
+    });
+
+    $("#btn_mod").on("click", function(){
+        //$("#mod").submit();
+        $.ajax({
+            url: $("#mod").attr("action"),
+            type: 'put',
+            data: {
+                name: "put name",
+                email: "put email"
+            },
+            cache: false,
+            success: function() {  },
+            error: function() { }
+        })
+
+    });
+
+});
+/*]]>*/
+</script>
+
+</body>
+</html>
